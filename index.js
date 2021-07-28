@@ -31,6 +31,9 @@ app.use("/api/blog", blogRoute);
 app.use("/api/user",userRoute);
 // app.use("/api/feedback", feedbackRoute);
 // app.use("/api/admin", adminRoute);
+app.get('/', (req, res) => {
+  res.send("Success")
+})
 
 // Start Server
 app.listen(port, () => {
