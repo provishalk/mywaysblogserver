@@ -15,3 +15,12 @@ module.exports.oneBlog = async (req,res) => {
      const blog = await Blog.findOne(req.body);
      res.status(200).send(blog);
 }
+
+module.exports.editBlog = async (req,res) => {
+    try {
+        await Blog.findOneAndUpdate({_id:req.body._id},req.body.updatedBlog);
+        res.status(200).send("ok");
+    } catch (error) {
+        res.status(400).send("Error");
+    }
+}
