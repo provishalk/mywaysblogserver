@@ -30,7 +30,7 @@ app.use(cors());
 app.use("/api/blog", blogRoute);
 app.use("/api/user",userRoute);
 app.use("/api/admin", adminRoute);
-app.use("/api/comment",commentRoute);
+app.use("/api/comments",commentRoute);
 
 
 app.get('/', (req, res) => {

@@ -16,7 +16,15 @@ module.exports.addComment = async (req,res) =>{
         res.send(error);
     }
 }
-
+module.exports.getComment = async (req,res) => {
+    try {
+        const blogId = req.body.blogId;
+        const data = await Comment.findOne({blogId}); 
+        res.send(data.comments);
+    } catch (error) {
+        res.status(404).send(error);
+    }
+}
 // {
 //     "blogId": "61004963ed77bb33bc364f12",
 //     "comments":
