@@ -20,17 +20,10 @@ module.exports.getComment = async (req,res) => {
     try {
         const blogId = req.body.blogId;
         const data = await Comment.findOne({blogId}); 
-        res.send(data.comments);
+        console.log(blogId);
+        res.json(data.comments);
     } catch (error) {
+        console.log("error");
         res.status(404).send(error);
     }
 }
-// {
-//     "blogId": "61004963ed77bb33bc364f12",
-//     "comments":
-//         {
-//             "userId": "String",
-//             "userName": "String",
-//             "comment": "GoodBlogg"
-//         }
-// }
