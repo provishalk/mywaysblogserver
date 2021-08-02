@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const blogRoute = require("./src/routes/blog.router");
 const userRoute = require("./src/routes/user.router");
 const adminRoute = require("./src/routes/admin.router");
-
+const commentRoute = require("./src/routes/comment.router");
 
 // Database connection
 mongoose.connect(
@@ -30,6 +30,8 @@ app.use(cors());
 app.use("/api/blog", blogRoute);
 app.use("/api/user",userRoute);
 app.use("/api/admin", adminRoute);
+app.use("/api/comment",commentRoute);
+
 
 app.get('/', (req, res) => {
   res.send("Success")

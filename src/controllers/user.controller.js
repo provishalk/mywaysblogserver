@@ -22,7 +22,8 @@ module.exports.login = async (req, res) => {
         return res.send(
             {
                 jwt: token,
-                fullName:user.fullName
+                fullName:user.fullName,
+                userId:user._id
             }
         );
     }
